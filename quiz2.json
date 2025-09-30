@@ -1,0 +1,12 @@
+[
+    {
+      "question": "What is the chemical symbol for water?",
+      "options": ["H2O", "CO2", "O2", "N2"],
+      "answer": "H2O"
+    },
+    {
+      "question": "Which gas is most abundant in Earth's atmosphere?",
+      "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Helium"],
+      "answer": "Nitrogen"
+    }
+  ]
