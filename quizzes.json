@@ -1,0 +1,10 @@
+[
+  {
+    "name": "General Knowledge",
+    "file": "quiz1.json"
+  },
+  {
+    "name": "Science Trivia", 
+    "file": "quiz2.json"
+  }
+]

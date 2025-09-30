@@ -1,31 +1,40 @@
 # Pop Quiz Application
 
-A dynamic quiz application that automatically detects quiz files and loads them dynamically.
+A static quiz application perfect for GitHub Pages hosting.
 
 ## Features
 
-- Automatically detects all `quiz*.json` files in the directory
-- Uses filename (without extension) as quiz title
-- No need to manually update the quiz list in code
+- Static file-based quiz system
+- Easy to add new quizzes
+- Works with GitHub Pages
 - Simple, clean interface
 
 ## Setup
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-2. Start the server:
-   ```bash
-   npm start
-   ```
-
-3. Open your browser and go to `http://localhost:3000`
+1. Simply open `index.html` in your browser or deploy to GitHub Pages
+2. No server setup required!
 
 ## Adding New Quizzes
 
-Simply add new JSON files with the naming pattern `quiz*.json` (e.g., `quiz3.json`, `quiz4.json`, etc.). The application will automatically detect them and add them to the quiz selector.
+1. Create a new quiz file (e.g., `quiz3.json`) following the format below
+2. Add an entry to `quizzes.json` with the quiz name and filename:
+
+```json
+[
+  {
+    "name": "General Knowledge",
+    "file": "quiz1.json"
+  },
+  {
+    "name": "Science Trivia", 
+    "file": "quiz2.json"
+  },
+  {
+    "name": "Your New Quiz",
+    "file": "quiz3.json"
+  }
+]
+```
 
 ## Quiz File Format
 
@@ -41,9 +50,8 @@ Each quiz file should be a JSON array of question objects:
 ]
 ```
 
-## Development
+## GitHub Pages Deployment
 
-For development with auto-restart:
-```bash
-npm run dev
-```
+1. Push your files to a GitHub repository
+2. Enable GitHub Pages in repository settings
+3. Your quiz will be available at `https://yourusername.github.io/repository-name`

@@ -95,7 +95,7 @@
 
     async function populateQuizSelector() {
       try {
-        const response = await fetch('/api/quizzes');
+        const response = await fetch('quizzes.json');
         if (!response.ok) throw new Error('Failed to load quiz list');
         quizList = await response.json();
         
