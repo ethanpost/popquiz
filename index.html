@@ -81,11 +81,7 @@
   </div>
 
   <script>
-    const quizList = [
-      { name: "General Knowledge", file: "quiz1.json" },
-      { name: "Science Trivia", file: "quiz2.json" }
-    ];
-
+    let quizList = [];
     let quizData = [];
     let currentQuestion = 0;
     let score = 0;
@@ -97,13 +93,22 @@
     const resultElement = document.getElementById("result");
     const quizContainer = document.getElementById("quiz");
 
-    function populateQuizSelector() {
-      quizList.forEach(quiz => {
-        const option = document.createElement("option");
-        option.value = quiz.file;
-        option.textContent = quiz.name;
-        quizSelector.appendChild(option);
-      });
+    async function populateQuizSelector() {
+      try {
+        const response = await fetch('/api/quizzes');
+        if (!response.ok) throw new Error('Failed to load quiz list');
+        quizList = await response.json();
+        
+        quizList.forEach(quiz => {
+          const option = document.createElement("option");
+          option.value = quiz.file;
+          option.textContent = quiz.name;
+          quizSelector.appendChild(option);
+        });
+      } catch (error) {
+        console.error('Error loading quiz list:', error);
+        quizSelector.innerHTML = '<option value="">Error loading quizzes</option>';
+      }
     }
 
     async function loadQuiz(file) {
